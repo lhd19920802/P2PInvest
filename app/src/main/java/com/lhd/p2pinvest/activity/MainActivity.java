@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.lhd.p2pinvest.R;
 import com.lhd.p2pinvest.base.BaseFragment;
+import com.lhd.p2pinvest.common.ActivityManager;
 import com.lhd.p2pinvest.fragment.HomeFragment;
 import com.lhd.p2pinvest.fragment.InvestFragment;
 import com.lhd.p2pinvest.fragment.MoreFragment;
@@ -43,6 +44,8 @@ public class MainActivity extends FragmentActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        //将当前的activity添加到栈管理中
+        ActivityManager.getInstance().add(this);
         setContentView(R.layout.activity_main);
 
         initView();

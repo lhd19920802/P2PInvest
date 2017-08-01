@@ -1,1 +1,2 @@
-include ':app'
+include ':app', ':xutils_library', ':banner'
+include ':ViewPagerIndicator_library'
