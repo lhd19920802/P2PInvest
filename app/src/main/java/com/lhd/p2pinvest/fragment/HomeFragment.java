@@ -1,5 +1,6 @@
 package com.lhd.p2pinvest.fragment;
 
+import android.os.SystemClock;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.lhd.p2pinvest.R;
 import com.lhd.p2pinvest.base.BaseFragment;
 import com.lhd.p2pinvest.common.AppNetConfig;
 import com.lhd.p2pinvest.domain.Index;
+import com.lhd.p2pinvest.ui.RoundProgress;
 import com.lhd.p2pinvest.utils.CacheUtils;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -37,6 +39,8 @@ public class HomeFragment extends BaseFragment
     private ImageView iv_title_setting;
     private ViewPager vp_baner;
     private Banner banner;
+    private int progress;
+    private RoundProgress round_progress;
 
     @Override
     public View initView()
@@ -47,6 +51,8 @@ public class HomeFragment extends BaseFragment
         iv_title_setting = (ImageView) view.findViewById(R.id.iv_title_setting);
         //        vp_baner = (ViewPager) view.findViewById(R.id.vp_baner);
         banner = (Banner) view.findViewById(R.id.banner);
+        round_progress = (RoundProgress) view.findViewById(R.id.round_progress);
+
         iv_title_back.setVisibility(View.GONE);
         iv_title_setting.setVisibility(View.GONE);
         return view;
@@ -107,6 +113,19 @@ public class HomeFragment extends BaseFragment
         Log.e(TAG, index.getImageArr().get(1).getIMAURL());
         //        HomePagerAdapter adapter=new HomePagerAdapter(mContext,index.getImageArr());
         //        vp_baner.setAdapter(adapter);
+
+        progress=Integer.parseInt(index.getProInfo().getProgress());
+        new Thread(){
+            public void run(){
+
+                round_progress.setProgress(0);
+                for (int i = 0; i < progress; i++)
+                {
+                    SystemClock.sleep(10);
+                    round_progress.setProgress(round_progress.getProgress() + 1);
+                }
+            }
+        }.start();
 
         //设置banner样式
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE);

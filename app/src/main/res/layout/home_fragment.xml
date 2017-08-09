@@ -7,7 +7,7 @@
 
     <include layout="@layout/common_title"/>
 
-    <ScrollView
+    <com.lhd.p2pinvest.ui.MyScrollView
         android:id="@+id/myscrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -109,23 +109,21 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center">
 
-                <!-- 圆环进度-->
-                <!--<com.atguigu.p2pmoney.ui.RoundProgress
-                    android:id="@+id/p_progresss"
+                 <!--圆环进度-->
+                <com.lhd.p2pinvest.ui.RoundProgress
+                    android:id="@+id/round_progress"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    app:roundColor="@android:color/darker_gray"
-                    app:roundProgressColor="@android:color/holo_red_dark"
-                    app:roundWidth="10dp"
-                    app:textColor="#18b4ed"
-                    app:textSize="20sp">
-                </com.atguigu.p2pmoney.ui.RoundProgress>-->
+
+                    >
+
+                </com.lhd.p2pinvest.ui.RoundProgress>
 
                 <!--此Button暂时替换上面的RoundProgress -->
-                <Button
+                <!--<Button
                     android:id="@+id/p_progresss"
                     android:layout_width="120sp"
-                    android:layout_height="120sp"></Button>
+                    android:layout_height="120sp"></Button>-->
             </RelativeLayout>
 
             <LinearLayout
@@ -177,6 +175,6 @@
         </LinearLayout>
 
 
-    </ScrollView>
+    </com.lhd.p2pinvest.ui.MyScrollView>
 
 </LinearLayout>

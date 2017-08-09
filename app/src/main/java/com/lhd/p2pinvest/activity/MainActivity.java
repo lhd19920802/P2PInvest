@@ -6,6 +6,7 @@ import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
+import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -46,6 +47,8 @@ public class MainActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
         //将当前的activity添加到栈管理中
         ActivityManager.getInstance().add(this);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
         initView();
