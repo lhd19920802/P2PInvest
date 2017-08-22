@@ -9,9 +9,9 @@ package com.lhd.p2pinvest.common;
 
 public class AppNetConfig
 {
-    public static final String HOST = "192.168.1.172";//提供ip地址
+//    public static final String HOST = "192.168.1.172";//提供ip地址
 
-//    public static final String HOST="192.168.191.1";
+    public static final String HOST="192.168.191.1";
     //提供web应用的地址
     public static final String BASE_URL = "http://" + HOST + ":8080/P2PInvest/";
 

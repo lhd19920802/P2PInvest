@@ -27,4 +27,6 @@ dependencies {
     compile project(':xutils_library')
     compile 'com.google.code.gson:gson:2.8.1'
     compile project(':banner')
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
